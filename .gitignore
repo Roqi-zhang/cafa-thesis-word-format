@@ -1,0 +1,14 @@
+input/
+output/
+backups/
+*.docx
+*.doc
+*.pdf
+*.png
+*.jpg
+*.jpeg
+*.webp
+*.txt
+*.log
+__pycache__/
+~$*

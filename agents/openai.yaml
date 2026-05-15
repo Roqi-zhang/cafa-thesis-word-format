@@ -1,0 +1,3 @@
+display_name: CAFA Thesis Word Format
+short_description: Format CAFA undergraduate thesis DOCX files with privacy-safe Word automation.
+default_prompt: Use the cafa-thesis-word-format skill to plan, confirm, execute, and validate CAFA undergraduate thesis Word formatting while protecting thesis content and private files.
