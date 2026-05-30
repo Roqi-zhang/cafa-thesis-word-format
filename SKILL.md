@@ -30,6 +30,7 @@ Allowed only after confirmation:
 - Use circled-number visible markers for body references and footnote-area markers.
 - Format footnote text as small-five size, Songti for Chinese text, Times New Roman for Latin text and digits, black, regular weight, single line spacing.
 - Normalize existing image caption formatting without inventing or rewriting caption content.
+- Repair confirmed problem-fix passes such as fragmented native footnotes, missing page numbers, major chapter page breaks, and legacy floating image layouts when explicitly approved.
 - Normalize existing reference-list formatting without adding, deleting, or completing bibliography entries.
 - Generate a change report and a content-protection validation report.
 
@@ -72,7 +73,10 @@ Suggested use:
 python scripts/process_docx_template.py --source-docx SOURCE.docx --target-docx TARGET.docx --report-md REPORT.md
 python scripts/fix_footnote_style_template.py --source-docx TARGET.docx --target-docx TARGET_FOOTNOTES.docx --report-md FOOTNOTE_REPORT.md
 python scripts/validate_docx_template.py --source-docx SOURCE.docx --target-docx TARGET_FOOTNOTES.docx --report-md VALIDATION_REPORT.md
+python scripts/repair_layout_issues_template.py --source-docx SOURCE.docx --target-docx TARGET_REPAIRED.docx --report-md REPAIR_REPORT.md --validation-report-md VALIDATION_REPORT.md
 ```
+
+Use `repair_layout_issues_template.py` only for a confirmed repair pass, not for the initial planning inspection. It is designed to copy the source to a target, safely merge clearly fragmented footnotes, add centered PAGE fields, set major headings to start on new pages, normalize figure captions, and prevent legacy floating images from overlapping text. Missing or uncertain source data must remain in reports only.
 
 ## Completion Report
 

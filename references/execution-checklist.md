@@ -21,6 +21,7 @@ The plan must state:
 - Forbidden changes.
 - How green annotations will be detected and converted.
 - How native footnotes will be preserved.
+- Whether fragmented footnote repair, page-number insertion, major-heading page breaks, or image layout repair is in scope.
 - How captions and references will be handled.
 - Validation commands or checks.
 - Manual review points.
@@ -32,6 +33,7 @@ Wait for explicit human confirmation before modifying a Word document.
 - Create a new output file.
 - Never overwrite the source document.
 - Use parameterized scripts or reviewed code.
+- For confirmed problem-fix passes, prefer `scripts/repair_layout_issues_template.py` and pass explicit source, target, report, and validation paths.
 - Keep missing information in reports only.
 - Preserve native Word structures.
 - Stop and report if parsing is unsafe or document structure is unexpected.
@@ -42,6 +44,10 @@ Wait for explicit human confirmation before modifying a Word document.
 - Output package is a valid `.docx` zip.
 - Required OOXML parts exist.
 - Native footnote count matches body reference count.
+- No empty, single-punctuation, or clearly fragmented footnotes remain after a repair pass.
+- Page footers contain a PAGE field and no literal "page number" placeholder when page numbering was in scope.
+- Major headings configured for new-page starts when chapter pagination was in scope.
+- Legacy floating images do not overlap text and are constrained within the text area when image repair was in scope.
 - Footnote markers are circled numbers and body markers are superscript.
 - Footnote text is 9 pt, Songti-equivalent for Chinese, Times New Roman-equivalent for Latin text and digits, black, regular, single spaced.
 - Remaining green text count is expected.
